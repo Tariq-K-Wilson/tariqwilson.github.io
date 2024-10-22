@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tariq Wilson Portfolio</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/36f86dedae.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" class="logo">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <p>Front-End/ Software Developer</p>
+                    <h1>Hi, Im <span>Tariq Wilson</span>, <br>a passionate problem-solver focused on creating user-friendly solutions.</h1>
+                </div>
+            </div>
+        </div>
+
+<!--------------------about------------------->
+
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col1">
+                        <img src="images/TariqLogo.png" alt="">
+                    </div>
+                    <div class="about-col2">
+                        <h1 class="subtitle">About Me</h1>
+                        <p>Hi, Hi, I’m Tariq Wilson, an aspiring software developer and front-end developer passionate 
+                            about creating responsive, user-friendly web applications and software solutions. With a 
+                            background in computer science and a focus on clean design, I’m dedicated to turning ideas 
+                            into visually engaging and functional digital experiences. Explore my projects to see how 
+                            I blend creativity with technical expertise to build modern, interactive websites and software.</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Web Development</span><br>Designing interactive websites</li>
+                                <li><span>Web Development</span><br>Designing interactive websites</li>
+                                <li><span>Web Development</span><br>Designing interactive websites</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2024</span><br><b>Bachelor of Science in Computer Science</b><br><i>Minor in Information Science, Technology, and the Arts</i><br>University of Arizona</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Computer Science and Math Tutor, 2023 - 2024</span><br>Designing interactive websites</li>
+                                <li><span>Project Support Intern 2021</span><br>Designing interactive websites</li>
+                                <li><span>Web Development</span><br>Designing interactive websites</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----------Portfolio------------>
+
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="subtitle">Portfolio</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/dataanalytics.jpg" alt="">
+                        <div class="layer">
+                            <h3>Data</h3>
+                            <p>Projects that used data to present information through vizualization</p>
+                            <a href="https://github.com/Tariq-K-Wilson/Tariq-Wilson-Data-Projects.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/coding.jpg" alt="">
+                        <div class="layer">
+                            <h3>More</h3>
+                            <p>Projects that used various coding skills</p>
+                            <a href="https://github.com/Tariq-K-Wilson/Tariq-Wilson-Projects.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-------------contact--------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p> <i class="fa-solid fa-paper-plane"></i> tariqwilsonmc@gmail.com</p>
+                    <p> <i class="fa-solid fa-phone"></i> (520)475-6238</p>
+                    <a href="images/full_resume_tariq_wilson.docx" download class="bttn"> Download Resume</a>
+                </div>
+               
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="bttn">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+        <script>
+
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+
+            }
+        </script>
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzHg5HNjP3Iprc2SiKydJFdc3hcaT3QHdnqmeR4LnMTcX6v0dGFkKgcKvgzW-ACi7o/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message Sent"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>
